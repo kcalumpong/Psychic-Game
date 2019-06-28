@@ -11,41 +11,25 @@
 </head>
 <body>
 
-    <!-- 1. Computer chooses a secret random value between a-z.
-    2. User tries to guess what that letter is by pressing it on the keyboard.
+    <!-- 1. Computer chooses a secret random value between a-z. Will use math random, math floor.
+    2. User tries to guess what that letter is by pressing it on the keyboard. Will log this with an onkey event.
     3. We decide if the user wins or not.
         *If the user guesses before they run out of guesses, they win.
         *If the user doesn't guess before they run out, they lose.
-    4. We add to their score. 
-        *If user wins then we add to their wins.
-        *If user loses then we add to their losses.
-        *We keep track of the users guess in 'Guesses so far'. 
-    5. Game resets to 0 after a win or a loss.     -->
+    4. We add to their score. Using innerHTML to update the static HTML. 
+        *If user wins then we add to their wins. Using "if" condition.
+        *If user loses then we add to their losses. Using the "else" condition.
+        *We keep track of the users guess in 'Guesses so far'. Using push method.
+    5. Game resets to 0 after a win or a loss. Using the conditional "else if".    -->
         
 <div id="game">
-<!-- <h1>The Psychic Game</h1> -->
 
-<p>Guess what letter I am thinking of!<p>
+    <p>Guess what letter I am thinking of!<p>
 
-<p>Wins: 0</p>
-<p>Losses: 0</p>
-<p id="resetGuess">Guesses Left:</p>
-<!-- <p>Your Guesses so far:</p> --> 
-
-<!-- 
-4. Wins: (# of times the user has guessed the letter correctly)
-
-5. Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
-
-6. Guesses Left: (# of guesses left. This will update)
-
-7. Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.)
-
-8. When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
-
-9. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
- -->
-
+    <p>Wins: 0</p>
+    <p>Losses: 0</p>
+    <p>Guesses Left:</p>
+    <p>Your Guesses so far:</p> 
 
 </div>    
 </body>
