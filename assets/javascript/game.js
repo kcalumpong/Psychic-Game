@@ -38,7 +38,7 @@ document.onkeyup = function(event) {
 
 winsText.textContent = "Wins: " + wins;
 lossesText.textContent = "Losses: " + losses;
-guessText.textContent = "Guesses left " + guessLeft;
+guessText.textContent = "Guesses left: " + guessLeft;
 guessSoFarText.textContent = "Your Guesses so far: " + guessChoices;
 
 }
