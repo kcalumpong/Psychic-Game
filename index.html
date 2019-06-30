@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="../Psychic-Game/assets/javascript/game.js"></script> 
     <link rel="stylesheet" href="../Psychic-Game/assets/css/reset.css">
     <link rel="stylesheet" href="../Psychic-Game/assets/css/style.css">
     <title>Psychic Game</title>
-</head>
-<body>
+ </head>
+ <body>
 
-    <!-- 1. Computer chooses a secret random value between a-z. Will use math random, math floor.
+    <!-- 
+    1. Computer chooses a secret random value between a-z. Will use math random, math floor.
+    
     2. User tries to guess what that letter is by pressing it on the keyboard. Will log this with an onkey event.
+    
     3. We decide if the user wins or not.
         *If the user guesses before they run out of guesses, they win.
         *If the user doesn't guess before they run out, they lose.
-    4. We add to their score. Using innerHTML to update the static HTML. 
-        *If user wins then we add to their wins. Using "if" condition.
-        *If user loses then we add to their losses. Using the "else" condition.
-        *We keep track of the users guess in 'Guesses so far'. Using push method.
-    5. Game resets to 0 after a win or a loss. Using the conditional "else if".    -->
+    
+        4. We add to their score. Using content.text to update the static HTML. 
+        *If user wins then we add to their wins by using an "if" condition.
+        *If user loses then we add to their losses by using an "if" condition.
+        *We keep track of the users guess and score by using text.Content.
+    
+        5. Game resets to 0 and clears guesses after a win or a loss. By calling a function we created.    -->
         
-<div id="game">
+   
+        <h1>The Psychic Game</h1>
 
-    <p>Guess what letter I am thinking of!<p>
+        <h2>Guess what letter I am thinking of!<h2>
+        
+        <p id="wins-text">Wins: 0</p>
+    
+        <p id="losses-text">Losses: 0</p>
+    
+        <p id="guess-text">Guesses Left:</p>
+    
+        <p id="guessSoFar-text">Your Guesses so far:</p> 
 
-    <p>Wins: 0</p>
-    <p>Losses: 0</p>
-    <p>Guesses Left:</p>
-    <p>Your Guesses so far:</p> 
+        <script type="text/javascript" src="../Psychic-Game/assets/javascript/game.js"></script> 
 
-</div>    
-</body>
+
+  </body>
 </html>
