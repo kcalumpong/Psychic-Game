@@ -1,50 +1,44 @@
+let options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+
 let wins = 0;
 let losses = 0;
-let guessLeft= 9;
-let guessChoices= [];
+let guessLeft;
+let guessChoices;
 
-let options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"];
+let winsText = document.getElementById("wins-text");
+let lossesText = document.getElementById("losses-text");
+let guessText = document.getElementById("guess-text");
+let guessSoFarText = document.getElementById("guessSoFar-text");
 
-document.onkeyup = function() {
-    let userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    console.log(userGuess);
 
-let computerGuess = options[Math.floor(Math.random() * options.length)];
-    console.log(computerGuess);
+function newLetter() {
+   computerGuess = options[Math.floor(Math.random() * options.length)];
+   guessLeft = 9;
+   guessChoices = "";
+} 
 
-guessChoices.push(userGuess); 
+newLetter();
+
+document.onkeyup = function(event) {
     
-if ((userGuess==computerGuess)) {
-    wins++;
-    alert("You win!");
-}
-
-else if (guessLeft === 1) {
-    wins = 0;
-    losses= 0;
-    guessLeft= 9;
-    alert("Game Over!");
-}
-else {
-    losses++;
+    let userGuess = event.key;
     guessLeft--;
-    alert("Try again!");
+    guessChoices = guessChoices + userGuess + " "; 
+
+    if (userGuess === computerGuess) {
+        wins++;
+        newLetter();
+    }
+
+    if (guessLeft < 1) {
+        losses++;
+        newLetter();
+    }
+
+
+winsText.textContent = "Wins: " + wins;
+lossesText.textContent = "Losses: " + losses;
+guessText.textContent = "Guesses left " + guessLeft;
+guessSoFarText.textContent = "Your Guesses so far: " + guessChoices;
+
 }
-
-
-let html = "<p>Guess what letter I am thinking of!</p>" +
-"<p>Wins: " + wins + "</p>" +
-"<p>Losses: " + losses + "</p>" +
-"<p>Guesses Left: " + guessLeft + "</p>" +
-"<p>Your guesses so far: " + guessChoices.join(", ") +  "</p>";
-
-
-document.querySelector("#game").innerHTML = html;
-}
-
-
-
-
-
-
-
